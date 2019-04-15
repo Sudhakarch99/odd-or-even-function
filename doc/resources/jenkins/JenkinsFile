@@ -1,12 +1,4 @@
-pipeline {
-    agent none
-    stage('Init') {
-        checkout scm
-    }
-
-    stage('Build') {
-        sh 'mvn clean package'
-    }
+node {
     stage('Publish') {
         azureFunctionAppPublish appName: env.FUNCTION_NAME, 
                                 azureCredentialsId: env.AZURE_CRED_ID, 
