@@ -1,5 +1,4 @@
 pipeline {
-    ...
     stage('Init') {
         checkout scm
     }
